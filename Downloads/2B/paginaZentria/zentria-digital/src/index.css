@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zentria-primary: #0052CC;
+  --color-zentria-dark: #0A192F;
+  --font-inter: "Inter", sans-serif;
+  --font-libre: "Libre Baskerville", serif;
+}
+
+/* AQUÍ ES DONDE VA EL SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+}
