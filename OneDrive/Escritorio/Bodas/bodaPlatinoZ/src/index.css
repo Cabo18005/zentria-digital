@@ -1,0 +1,47 @@
+:root {
+  --bg-creamy: #FDFBF7;
+  --primary-rose: #DCAE96;
+  --secondary-sage: #B2AC88;
+  --text-dark: #4A4A4A;
+  --text-light: #8A8A8A;
+}
+
+body {
+  background-color: var(--bg-creamy);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Importaremos esto en HTML */
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+}
+
+.invitation-container {
+  max-width: 480px; /* Simulamos el ancho de un celular en la web */
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-creamy);
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.header-brand {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  margin-top: 20px;
+}
+
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin: 10px 0;
+  color: var(--text-dark);
+}
+
+.header-subtitle {
+  color: var(--primary-rose);
+  font-size: 14px;
+  letter-spacing: 1px;
+}

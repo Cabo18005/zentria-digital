@@ -1,0 +1,528 @@
+/* =========================================
+   ZENTRIA DIGITAL - BODA PLATINO STYLES
+   ========================================= */
+
+/* --- PALETA DE COLORES Y VARIABLES GLOBALES --- */
+/* Al principio de tu App.css */
+/* IMPORTA ESTO AL PRINCIPIO DE App.css */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.gallery-subtitle {
+  font-family: 'Great Vibes', cursive; /* LA LETANÍA */
+  font-size: 26px; /* Ajusta el tamaño para que sea legible */
+  color: var(--primary-rose);
+  margin-top: -10px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+:root {
+  --bg-creamy: #FDFBF7;
+  --primary-rose: #DCAE96;
+  --secondary-sage: #B2AC88;
+  --text-dark: #4A4A4A;
+  --text-light: #8A8A8A;
+}
+
+body {
+  background-color: var(--bg-creamy);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center; /* Centra la app en pantallas grandes */
+}
+
+/* Contenedor principal que simula la pantalla del celular */
+.invitation-container {
+  max-width: 480px; 
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-creamy);
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* --- HEADER (CABECERA) --- */
+.header-brand {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  margin-top: 20px;
+}
+
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin: 10px 0;
+  color: var(--text-dark);
+}
+
+.header-subtitle {
+  color: var(--primary-rose);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* --- SECCIÓN HERO (FOTO PRINCIPAL Y BIENVENIDA) --- */
+.hero-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-frame {
+  width: 85%;
+  max-width: 340px;
+  padding: 12px;
+  background-color: #FFFFFF;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #F0F0F0;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.welcome-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  padding: 0 20px;
+}
+
+.welcome-text {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.8;
+  padding: 0 30px;
+  text-align: center;
+}
+
+/* --- SECCIÓN BOLETO VIP (ACCESO QR) --- */
+.vip-ticket-section {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.ticket-card {
+  background-color: #FAF4EB; 
+  border: 1.5px dashed var(--secondary-sage);
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+.qr-container {
+  background: #FFFFFF;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ticket-details {
+  text-align: left;
+  flex: 1;
+}
+
+.ticket-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--text-dark);
+  margin: 0 0 5px 0;
+}
+
+.ticket-info {
+  font-size: 10px;
+  color: var(--text-light);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.ticket-data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+/* --- SECCIÓN ITINERARIO (TIMELINE) --- */
+.timeline-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px;
+  margin: 0 20px 40px 20px;
+  border-top: 1px solid var(--primary-rose);
+  border-bottom: 1px solid var(--primary-rose);
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.timeline-icon {
+  font-size: 26px;
+  color: var(--secondary-sage);
+  margin-bottom: 5px;
+}
+
+.timeline-item h4 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.timeline-item p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* --- SECCIÓN UBICACIÓN --- */
+.location-section {
+  margin: 0 20px 40px 20px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.location-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.location-card {
+  background-color: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-icon {
+  font-size: 30px;
+  color: var(--primary-rose);
+}
+
+.location-card h4 {
+  margin: 5px 0 0 0;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  color: var(--text-dark);
+}
+
+.location-card p {
+  margin: 0 0 15px 0;
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.btn-map {
+  background-color: var(--secondary-sage);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 10px rgba(178, 172, 136, 0.4);
+}
+
+.btn-map:hover {
+  opacity: 0.8;
+}
+
+/* --- SECCIÓN DETALLES IMPORTANTES --- */
+.details-section {
+  margin: 0 20px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-box {
+  background-color: var(--bg-creamy);
+  border: 1px solid var(--primary-rose);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.detail-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--secondary-sage);
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+}
+
+.detail-text {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin: 0 0 5px 0;
+}
+
+.detail-subtext {
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+.btn-gift {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: transparent;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid var(--text-dark);
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gift:hover {
+  background-color: var(--text-dark);
+  color: #FFFFFF;
+}
+
+/* --- BOTÓN FLOTANTE DE MÚSICA (ESTILO DISCO DE VINILO) --- */
+.music-fab {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #2C2C2C; /* Color del disco */
+  border: 4px solid var(--primary-rose); /* Borde elegante */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.music-icon {
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-left: 3px; /* Centra visualmente el icono de play */
+}
+
+/* Animación para que gire como disco cuando está encendido */
+.spinning {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* --- SECCIÓN RSVP (FORMULARIO) --- */
+.rsvp-section {
+  margin: 0 20px 40px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.rsvp-subtitle {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 15px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--text-dark);
+  background-color: #FAFAFA;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-rose);
+  background-color: #FFFFFF;
+}
+
+.btn-submit {
+  background-color: var(--text-dark);
+  color: #FFFFFF;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--secondary-sage);
+}
+
+.btn-submit:disabled {
+  background-color: #CCCCCC;
+  cursor: not-allowed;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* App.css (Al final) */
+.invitation-container {
+  /* ... tus estilos actuales ... */
+  opacity: 0; /* Oculta la invitación al principio */
+  transition: opacity 1s ease-in-out 1s; /* Aparece con retraso para la animación */
+}
+
+/* Cuando el sobre se abre, la invitación aparece */
+.invitation-container.envelope-opened {
+  opacity: 1;
+}
+
+/* --- SECCIÓN HOSPEDAJE --- */
+.hotels-section {
+  margin: 40px 20px;
+}
+
+.hotels-subtitle {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.hotels-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hotel-card {
+  background: rgba(255, 255, 255, 0.6); /* Transparencia para ver la acuarela de fondo */
+  border: 1px solid var(--gold-soft);
+  padding: 20px;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-5px);
+  background: white;
+}
+
+.hotel-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hotel-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  color: var(--text-dark);
+}
+
+.hotel-dist {
+  font-size: 12px;
+  color: var(--secondary-sage);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.hotel-rate {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.btn-hotel {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary-rose);
+  padding-bottom: 2px;
+  letter-spacing: 1px;
+}

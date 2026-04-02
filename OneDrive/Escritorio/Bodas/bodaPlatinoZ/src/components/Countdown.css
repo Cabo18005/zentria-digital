@@ -1,0 +1,48 @@
+/* src/components/Countdown.css */
+
+.countdown-container {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fdfaf8; /* Un fondo crema muy suave */
+  margin: 20px 0;
+}
+
+.timer-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.time-box {
+  background: white;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 70px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.time-box span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #B28D58; /* El dorado de la letanía */
+}
+
+.time-box p {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin: 5px 0 0;
+  letter-spacing: 1px;
+}
+
+/* Para que la cursiva se vea bien */
+.countdown-container .cursive-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: var(--primary-rose);
+  margin-bottom: 10px;
+}

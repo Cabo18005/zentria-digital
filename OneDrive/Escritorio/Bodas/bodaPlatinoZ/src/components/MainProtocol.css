@@ -1,0 +1,72 @@
+/* src/components/MainProtocol.css */
+
+.protocol-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* La Letanía / Fuente Cursiva */
+.cursive-text, .name-cursive, .name-gold {
+  font-family: 'Great Vibes', cursive;
+}
+
+.cursive-text {
+  font-size: 22px;
+  color: var(--primary-rose);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.name-cursive {
+  font-size: 48px; /* Tamaño grande para los novios */
+  color: #B28D58; /* Dorado elegante */
+  font-weight: 400;
+  margin: 10px 0 30px;
+}
+
+.protocol-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #888;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.parent-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--primary-rose);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.name-gold {
+  font-size: 26px; /* Letanía para padres y padrinos */
+  color: #B28D58; 
+  margin: 5px 0;
+}
+
+.names-list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.godparents-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móvil se ve mejor con nombres largos */
+  gap: 15px;
+}
+
+@media (min-width: 480px) {
+  .godparents-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
