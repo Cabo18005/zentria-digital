@@ -21,7 +21,7 @@ export default function DotCTA() {
 
       {/* El Círculo del Producto DOT */}
       <a 
-        href="https://wa.me/529990000000?text=Hola!+Me+interesa+adquirir+mi+tarjeta+NFC+DOT"
+        href="https://wa.me/529999908114?text=Hola!+Me+interesa+adquirir+mi+tarjeta+NFC+DOT"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-white border-2 border-zentria-dark rounded-full flex items-center justify-center shadow-lg hover:bg-zentria-dark hover:text-white transition-all duration-300 animate-pulse-slow"

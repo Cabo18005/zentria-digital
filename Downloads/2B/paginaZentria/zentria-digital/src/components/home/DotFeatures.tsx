@@ -72,7 +72,7 @@ export default function DotFeatures() {
           <div className="bg-[#0A192F] rounded-[23px] p-8 md:p-12 text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-6">¿Listo para digitalizar tu networking?</h3>
             <a 
-              href="https://wa.me/529990000000?text=Hola!+Me+interesa+adquirir+mi+tarjeta+NFC+DOT"
+              href="https://wa.me/529999908114?text=Hola!+Me+interesa+adquirir+mi+tarjeta+NFC+DOT"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-white text-[#0A192F] px-10 py-4 rounded-full font-black hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-xl"

@@ -10,9 +10,11 @@ import CallToAction from './components/home/CallToAction';
 import Footer from './components/layout/footer';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import DotCTA from './components/ui/DotCTA';
-
-// Importamos la nueva página que acabas de crear
+import PhoneMockup from "./components/ui/PhoneMockup";
+// Importamos las páginas extras
 import DotPage from './pages/DotPage';
+
+// Importamos el componente del celular (Verifica que la ruta y el nombre del archivo sean los correctos)
 
 // 1. Empaquetamos todo tu trabajo anterior en un componente llamado "HomePage"
 function HomePage() {
@@ -50,6 +52,18 @@ export default function App() {
           
           {/* Si entran a zentria.digital/dot -> Ven el landing oscuro de tarjetas NFC */}
           <Route path="/dot" element={<DotPage />} />
+
+          {/* NUEVA RUTA: zentria.digital/demo -> Ven el visualizador del celular */}
+          <Route 
+            path="/demo" 
+            element={
+              <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-12">
+                <h2 className="text-3xl font-bold mb-8 text-gray-800">Vista Previa Interactiva</h2>
+                {/* Le pasamos la URL como prop (Asegúrate de que tu componente reciba demoUrl) */}
+                <PhoneMockup demoUrl="https://earnest-truffle-e1a76d.netlify.app" />
+              </div>
+            } 
+          />
         </Routes>
       </div>
     </BrowserRouter>

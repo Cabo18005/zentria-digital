@@ -37,7 +37,7 @@ export default function DotPage() {
           </div>
 
           <a 
-            href="https://wa.me/529990000000?text=Me+interesa+comprar+una+tarjeta+Zentria+DOT"
+            href="https://wa.me/529999908114?text=Me+interesa+comprar+una+tarjeta+Zentria+DOT"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/30"

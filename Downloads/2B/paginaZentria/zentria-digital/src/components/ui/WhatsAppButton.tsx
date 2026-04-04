@@ -1,5 +1,5 @@
 export default function WhatsAppButton() {
-  const telefono = "9999908114"; // Sustituye por tu número real (con 521 si es necesario)
+  const telefono = "529999908114"; // Sustituye por tu número real (con 521 si es necesario)
   const mensaje = encodeURIComponent("Hola Zentria, vi la página de Zentria Digital y me interesa una cotización.");
   const link = `https://wa.me/${telefono}?text=${mensaje}`;
 

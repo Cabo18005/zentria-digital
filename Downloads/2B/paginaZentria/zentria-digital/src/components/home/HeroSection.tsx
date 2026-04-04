@@ -1,4 +1,4 @@
-import Countdown from '../ui/Countdown';
+import PhoneMockup from '../ui/PhoneMockup';
 
 export default function HeroSection() {
   return (
@@ -23,45 +23,14 @@ export default function HeroSection() {
         </a>
       </div>
 
-      {/* Columna Derecha: Mockup del Celular Animado */}
+      {/* Columna Derecha: Mockup del Celular Animado (100% Interactivo) */}
       <div className="w-full lg:w-1/2 flex justify-center relative">
         {/* Decoración de fondo suave */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-50 z-0"></div>
         
-        {/* El "Celular" con animación de levitación */}
-        <div className="relative z-10 w-[320px] h-[640px] bg-white rounded-[3rem] shadow-2xl border-[10px] border-gray-900 overflow-hidden flex flex-col items-center animate-bounce-slow">
-          
-          {/* La muesca (Dynamic Island) */}
-          <div className="absolute top-0 w-36 h-7 bg-gray-900 rounded-b-3xl z-20"></div>
-          
-          {/* Pantalla Interna */}
-          <div className="w-full h-full bg-[#fdfbf7] flex flex-col items-center pt-24 pb-12 px-6 text-center">
-            
-            {/* Iniciales elegantes */}
-            <div className="w-16 h-16 border-2 border-amber-500 rounded-full flex items-center justify-center mb-6 shadow-sm">
-              <span className="font-libre text-2xl text-amber-700 italic">A&L</span>
-            </div>
-            
-            <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-3 font-bold">Nuestra Boda</p>
-            <h2 className="text-4xl font-libre text-zentria-dark mb-6">Ana & Luca</h2>
-            
-            <p className="text-sm text-gray-500 leading-relaxed mb-8 px-4 font-libre italic">
-              "Tenemos el honor de invitarte a celebrar nuestro gran día."
-            </p>
-            
-            {/* COMPONENTE DE CONTADOR REAL */}
-            <div className="mt-auto w-full">
-              <Countdown />
-            </div>
-
-            {/* Botón de confirmación simulado */}
-            <div className="mt-10 w-full px-4">
-              <div className="bg-zentria-dark/5 border border-zentria-dark/10 py-3 rounded-lg text-zentria-dark font-bold text-xs tracking-widest">
-                CONFIRMAR ASISTENCIA
-              </div>
-            </div>
-
-          </div>
+        {/* Envolvemos tu nuevo PhoneMockup interactivo en el div que tiene la animación flotante */}
+        <div className="relative z-10 animate-bounce-slow">
+          <PhoneMockup demoUrl="https://earnest-truffle-e1a76d.netlify.app" />
         </div>
       </div>
 

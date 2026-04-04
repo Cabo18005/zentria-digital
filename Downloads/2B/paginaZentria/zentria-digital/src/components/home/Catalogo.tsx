@@ -8,8 +8,8 @@ const PRODUCTOS = [
     categoria: "Bodas",
     precio: "Desde $850",
     imagen: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=500",
-    link: "https://wa.me/529990000000?text=Me+interesa+el+Pack+Oro+de+Boda",
-    demoUrl: "#" // Pon tu link aquí cuando lo tengas
+    link: "https://wa.me/529999908114?text=Me+interesa+el+Pack+Oro+de+Boda",
+    demoUrl: "https://courageous-entremet-faed04.netlify.app/?id=SAL-001" // Pon tu link aquí cuando lo tengas
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const PRODUCTOS = [
     categoria: "Bodas",
     precio: "Desde $700",
     imagen: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=500",
-    link: "https://wa.me/529990000000?text=Me+interesa+la+invitación+de+Boda+Minimalista",
+    link: "https://wa.me/529999908114?text=Me+interesa+la+invitación+de+Boda+Minimalista",
     demoUrl: "https://boda-premium-oro.vercel.app"
   },
   {
@@ -26,26 +26,26 @@ const PRODUCTOS = [
     categoria: "XV Años",
     precio: "Desde $750",
     imagen: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=500",
-    link: "https://wa.me/529990000000?text=Me+interesa+el+diseño+de+XV+Años+Sofía",
+    link: "https://wa.me/529999908114?text=Me+interesa+el+diseño+de+XV+Años+Sofía",
     demoUrl: "https://xvsofiabroncezentriadigital.vercel.app" // <-- Aquí va tu link real de Vercel
   },
   {
     id: 4,
-    titulo: "XV Años - K-Pop Edition",
+    titulo: "XV Años estilo Fatima",
     categoria: "XV Años",
     precio: "Desde $800",
     imagen: "https://images.unsplash.com/photo-1493225457124-a1a2a5f2571f?auto=format&fit=crop&q=80&w=500",
-    link: "https://wa.me/529990000000?text=Me+interesa+el+diseño+K-Pop+para+XV+Años",
-    demoUrl: "#"
+    link: "https://wa.me/529999908114?text=Me+interesa+el+diseño+K-Pop+para+XV+Años",
+    demoUrl: "https://analyxv.netlify.app#"
   },
   {
     id: 5,
-    titulo: "Aventura Espacial",
-    categoria: "Infantiles",
+    titulo: "XV años estilo princesa",
+    categoria: "XV Años",
     precio: "Desde $600",
     imagen: "https://images.unsplash.com/photo-1533227268428-f9ed0900f40a?auto=format&fit=crop&q=80&w=500",
-    link: "https://wa.me/529990000000?text=Me+interesa+la+invitación+infantil+Aventura+Espacial",
-    demoUrl: "#"
+    link: "https://wa.me/529999908114?text=Me+interesa+la+invitación+infantil+Aventura+Espacial",
+    demoUrl: "https://idyllic-marigold-aad25a.netlify.app"
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ const PRODUCTOS = [
     categoria: "Corporativo",
     precio: "$450",
     imagen: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=500",
-    link: "https://wa.me/529990000000?text=Quiero+información+sobre+las+tarjetas+DOT",
+    link: "https://wa.me/529999908114?text=Quiero+información+sobre+las+tarjetas+DOT",
     demoUrl: "https://xv-camila-zentria.vercel.app/?id=fam-ku"
   }
 ];
