@@ -13,7 +13,7 @@ const PRODUCTOS = [
   },
   {
     id: 2,
-    titulo: "Boda Minimalista",
+    titulo: "Boda - Pack Bronce",
     categoria: "Bodas",
     precio: "Desde $700",
     imagen: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=500",
@@ -22,36 +22,36 @@ const PRODUCTOS = [
   },
   {
     id: 3,
-    titulo: "XV Años - Sofía",
+    titulo: "XV Años - bronce",
     categoria: "XV Años",
-    precio: "Desde $750",
+    precio: "Desde $650",
     imagen: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=500",
     link: "https://wa.me/529999908114?text=Me+interesa+el+diseño+de+XV+Años+Sofía",
     demoUrl: "https://xvsofiabroncezentriadigital.vercel.app" // <-- Aquí va tu link real de Vercel
   },
   {
     id: 4,
-    titulo: "XV Años estilo Fatima",
+    titulo: "XV Años - divino",
     categoria: "XV Años",
-    precio: "Desde $800",
+    precio: "Desde $900",
     imagen: "https://images.unsplash.com/photo-1493225457124-a1a2a5f2571f?auto=format&fit=crop&q=80&w=500",
     link: "https://wa.me/529999908114?text=Me+interesa+el+diseño+K-Pop+para+XV+Años",
     demoUrl: "https://analyxv.netlify.app#"
   },
   {
     id: 5,
-    titulo: "XV años estilo princesa",
+    titulo: "XV años oro",
     categoria: "XV Años",
-    precio: "Desde $600",
+    precio: "Desde 8700",
     imagen: "https://images.unsplash.com/photo-1533227268428-f9ed0900f40a?auto=format&fit=crop&q=80&w=500",
     link: "https://wa.me/529999908114?text=Me+interesa+la+invitación+infantil+Aventura+Espacial",
     demoUrl: "https://idyllic-marigold-aad25a.netlify.app"
   },
   {
     id: 6,
-    titulo: "XV años - Camila",
-    categoria: "Corporativo",
-    precio: "$450",
+    titulo: "XV años - plata",
+    categoria: "XV Años",
+    precio: "$700",
     imagen: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=500",
     link: "https://wa.me/529999908114?text=Quiero+información+sobre+las+tarjetas+DOT",
     demoUrl: "https://xv-camila-zentria.vercel.app/?id=fam-ku"
