@@ -36,7 +36,7 @@ const PRODUCTOS = [
     precio: "Desde $900",
     imagen: "https://images.unsplash.com/photo-1493225457124-a1a2a5f2571f?auto=format&fit=crop&q=80&w=500",
     link: "https://wa.me/529999908114?text=Me+interesa+el+diseño+K-Pop+para+XV+Años",
-    demoUrl: "https://analyxv.netlify.app#"
+    demoUrl: ""
   },
   {
     id: 5,
