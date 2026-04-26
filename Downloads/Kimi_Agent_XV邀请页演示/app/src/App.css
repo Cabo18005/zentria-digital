@@ -1,0 +1,61 @@
+/* App-specific styles */
+
+/* Smooth transitions for all interactive elements */
+button, a, input {
+  transition: all 0.3s ease;
+}
+
+/* Custom focus styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: white;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px !important;
+  }
+  
+  .timeline-item {
+    padding-left: 60px !important;
+    padding-right: 0 !important;
+  }
+  
+  .timeline-dot {
+    left: 10px !important;
+    transform: none !important;
+  }
+  
+  .timeline-content {
+    text-align: left !important;
+    margin: 0 !important;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass-card {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: #d4af37;
+  }
+}
