@@ -1,24 +1,41 @@
 import { useState, useEffect } from 'react';
- 
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 const NAV_LINKS = [
-  { name: 'Inicio',     href: '#inicio'    },
-  { name: 'Catálogo',   href: '#catalogo'  },
-  { name: 'Servicios',  href: '#beneficios'},
-  { name: 'Contacto',   href: '#contacto'  },
+  { name: 'Inicio',     href: '/#inicio'    },
+  { name: 'Catálogo',   href: '/catalogo'   },
+  { name: 'Servicios',  href: '/#beneficios'},
+  { name: 'Contacto',   href: '/#contacto'  },
 ];
  
 export default function Navbar() {
   const [isOpen,    setIsOpen]    = useState(false);
   const [scrolled,  setScrolled]  = useState(false);
- 
+  const location = useLocation();
+  const navigate  = useNavigate();
+
   // Detecta scroll para cambiar la apariencia de la barra
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
- 
+
   const closeMenu = () => setIsOpen(false);
+
+  // Maneja clicks en links de tipo /#hash:
+  // si ya estamos en home, hace scroll directo; si no, navega a home con el hash.
+  const handleHashLink = (e: React.MouseEvent, href: string) => {
+    if (!href.startsWith('/#')) return;
+    e.preventDefault();
+    const id = href.slice(2);
+    if (location.pathname === '/') {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(href);
+    }
+    closeMenu();
+  };
  
   return (
     <nav
@@ -31,7 +48,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
  
         {/* ── Logo ── */}
-        <a href="#inicio" className="flex items-center gap-3 group cursor-pointer">
+        <Link to="/" className="flex items-center gap-3 group cursor-pointer">
           {/* Icono "Z" con gradiente */}
           <div className="relative w-10 h-10 flex items-center justify-center rounded-xl overflow-hidden shadow-md shadow-[#0052CC]/40 flex-shrink-0">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0052CC] to-[#003a99]" />
@@ -46,33 +63,34 @@ export default function Navbar() {
               Diseño · IA · Automatización
             </span>
           </div>
-        </a>
+        </Link>
  
         {/* ── Menú Desktop ── */}
         <ul className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
+                onClick={(e) => handleHashLink(e, item.href)}
                 className="relative px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200 group"
               >
                 {item.name}
                 <span className="absolute bottom-1 left-4 right-4 h-px bg-[#0052CC] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
- 
+
         {/* ── CTA Desktop ── */}
-        <a
-          href="#catalogo"
+        <Link
+          to="/catalogo"
           className="hidden md:inline-flex items-center gap-2 bg-[#0052CC] hover:bg-[#0041a3] text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 shadow-md shadow-[#0052CC]/30 hover:shadow-[#0052CC]/50 hover:-translate-y-px"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m0 0l-6.75-6.75M20.25 12l-6.75 6.75" />
           </svg>
           Ver Catálogo
-        </a>
+        </Link>
  
         {/* ── Botón hamburguesa (Móvil) ── */}
         <button
@@ -108,25 +126,25 @@ export default function Navbar() {
       >
         <div className="bg-[#0A192F]/98 backdrop-blur-md border-t border-white/5 shadow-xl px-6 py-6 space-y-1">
           {NAV_LINKS.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              onClick={closeMenu}
+              to={item.href}
+              onClick={(e) => handleHashLink(e, item.href)}
               className="flex items-center justify-between w-full px-4 py-3.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200 font-medium text-sm border border-transparent hover:border-white/10"
             >
               {item.name}
               <svg className="w-4 h-4 text-[#0052CC]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
-            </a>
+            </Link>
           ))}
  
           {/* Separador */}
           <div className="h-px bg-white/5 my-2" />
  
           {/* CTA Móvil */}
-          <a
-            href="#catalogo"
+          <Link
+            to="/catalogo"
             onClick={closeMenu}
             className="flex items-center justify-center gap-2 w-full bg-[#0052CC] hover:bg-[#0041a3] text-white py-4 rounded-xl font-bold text-sm shadow-lg shadow-[#0052CC]/30 transition-all duration-300"
           >
@@ -134,7 +152,7 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m0 0l-6.75-6.75M20.25 12l-6.75 6.75" />
             </svg>
             Ver Catálogo
-          </a>
+          </Link>
  
           {/* Subtítulo de marca en el menú móvil */}
           <p className="text-center text-[10px] text-gray-600 tracking-[0.2em] uppercase pt-2">

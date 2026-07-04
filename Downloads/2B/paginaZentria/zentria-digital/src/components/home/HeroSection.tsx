@@ -1,5 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import PhoneMockup from '../ui/PhoneMockup';
+import CanvasErrorBoundary from '../three/CanvasErrorBoundary';
+import { useIdleMount } from '../../hooks/useIdleMount';
+
+const HeroBackground3D = lazy(() => import('../three/HeroBackground3D'));
+
+// Fallback mostrado mientras carga el bundle 3D o si WebGL no está disponible.
+function CssOrbsFallback() {
+  return (
+    <>
+      <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-[#0052CC] opacity-20 blur-[120px]" />
+      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500 opacity-10 blur-[100px]" />
+      <div className="absolute -bottom-20 right-0 w-[500px] h-[500px] rounded-full bg-indigo-600 opacity-15 blur-[130px]" />
+    </>
+  );
+}
 
 // ─── Configuración central de WhatsApp ───────────────────────────────────────
 const TELEFONO = "529999908114";
@@ -41,12 +56,26 @@ export default function HeroSection() {
   const [wordIndex,  setWordIndex]  = useState(0);
   const [isVisible,  setIsVisible]  = useState(false);
   const [menuOpen,   setMenuOpen]   = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const canvasReady = useIdleMount();
 
   // Arranca la animación de entrada
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
+
+  // Cierra el menú al hacer click fuera
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [menuOpen]);
 
   // Rota las palabras del headline cada 2.5 segundos
   useEffect(() => {
@@ -59,14 +88,17 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#0A192F]">
 
-      {/* ── FONDO: malla de gradiente + grid sutil ── */}
+      {/* ── FONDO: escena 3D (blob distorsionado + partículas) + grid sutil ── */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        {/* Orbe azul primario */}
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-[#0052CC] opacity-20 blur-[120px]" />
-        {/* Orbe cyan acento */}
-        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500 opacity-10 blur-[100px]" />
-        {/* Orbe violeta derecha */}
-        <div className="absolute -bottom-20 right-0 w-[500px] h-[500px] rounded-full bg-indigo-600 opacity-15 blur-[130px]" />
+        {canvasReady ? (
+          <CanvasErrorBoundary fallback={<CssOrbsFallback />}>
+            <Suspense fallback={<CssOrbsFallback />}>
+              <HeroBackground3D />
+            </Suspense>
+          </CanvasErrorBoundary>
+        ) : (
+          <CssOrbsFallback />
+        )}
         {/* Grid punteado */}
         <div
           className="absolute inset-0 opacity-[0.06]"
@@ -174,7 +206,7 @@ export default function HeroSection() {
               }}
             >
               {/* ── CTA Principal: selector de intención ── */}
-              <div className="relative">
+              <div className="relative" ref={menuRef}>
                 {/* Menú desplegable de intenciones */}
                 {menuOpen && (
                   <div className="absolute bottom-[calc(100%+10px)] left-0 z-50 w-72 bg-[#0d1f35] border border-white/10 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden backdrop-blur-md">
